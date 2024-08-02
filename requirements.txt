@@ -1,0 +1,9 @@
+transformers
+langchain_together
+langchain
+torch
+nltk
+sentencepiece
+pdfplumber
+streamlit==1.29.0
+streamlit_chat==0.1.1
