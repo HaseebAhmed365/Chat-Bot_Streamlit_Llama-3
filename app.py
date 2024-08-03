@@ -28,7 +28,7 @@ def Bot(Questions):
         input_variables=['text', 'Questions'],
         template=chat_template
     )
-    llama3 = Together(model="meta-llama/Llama-3-70b-chat-hf", max_tokens=25)
+    llama3 = Together(model="meta-llama/Llama-3-70b-chat-hf", max_tokens=15)
     Generated_chat = LLMChain(llm=llama3, prompt=prompt)
 
     try:
@@ -65,8 +65,20 @@ def ChatBot(Questions):
         return response.translate(str.maketrans('', '', '\n'))
 
 # Streamlit UI
-st.title("Chatbot")
-Questions = st.text_input("Ask a question:")
+st.title("AI Engineer Test")
+Questions = st.text_input("Hi! How can I help you?:")
 if st.button("Submit"):
     answer = ChatBot(Questions)
     st.write(answer)
+
+
+
+
+    # --- Logo ---
+
+st.sidebar.image("Insight Therapy Solutions.png", width=200)
+
+st.sidebar.title("Navigation")
+st.sidebar.write("Reclaim Your Mental Health")
+st.sidebar.markdown("[Visit us at](https://www.insighttherapysolutions.com/)")
+
